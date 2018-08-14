@@ -1,3 +1,5 @@
+const imports = require('../utils/imports.js')
+
 module.exports = (api, options) => {
 	delete api.generator.pkg.postcss
 
@@ -10,4 +12,10 @@ module.exports = (api, options) => {
 	})
 
 	api.render('./templates', options)
+
+	api.onCreateComplete(() => {
+		const jsExtension = api.hasPlugin('typescript') ? 'ts' : 'js'
+		const pathToMain = api.resolve(`./src/main.${jsExtension}`)
+		imports.addToFileAt(pathToMain, '@/assets/styles/tailwind.css')
+	})
 }
