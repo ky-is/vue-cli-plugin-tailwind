@@ -1,4 +1,6 @@
 module.exports = (api, options) => {
+	delete api.generator.pkg.postcss
+
 	api.extendPackage({
 		devDependencies: {
 			"@fullhuman/postcss-purgecss": "^1.0.1",
@@ -6,4 +8,6 @@ module.exports = (api, options) => {
 			"tailwindcss": "^0.6.5",
 		},
 	})
+
+	api.render('./templates', options)
 }
