@@ -1,7 +1,7 @@
 {
 	"name": "@ky-is/vue-cli-plugin-tailwind",
 	"version": "1.0.0",
-	"description": "Tailwind CSS + purgecss + postcss-import",
+	"description": "Everything you need to write utility-first CSS with modern standards in your Vue app.",
 	"author": "Kyle Coburn",
 	"license": "ISC",
 	"repository": {

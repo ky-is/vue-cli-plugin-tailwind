@@ -1,6 +1,10 @@
 # vue-cli-plugin-tailwind
 
-[Tailwind CSS](https://tailwindcss.com) + [purgecss](https://www.purgecss.com) + [postcss-import](https://github.com/postcss/postcss-import)
+[Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind)'s utility classes are paired with [Purgecss](https://www.purgecss.com) to ensure a minimal CSS footprint.
+
+[postcss-preset-env](https://preset-env.cssdb.org/features) enables you to write CSS from upcoming standards, polyfilled based on your browserslist configuration.
+
+[postcss-import](https://github.com/postcss/postcss-import) ensures Tailwind's imports play nice with PostCSS, and gives you the option to @import css files.
 
 ## Install
 
