@@ -8,6 +8,8 @@
 vue add @ky-is/tailwind
 ```
 
+Requires node 6 or later. 
+
 ## Usage
 
 You can use global Tailwind classes as normal, but `shadowLookup` is also supported for `@apply` mixins directly in `.vue` modules.
