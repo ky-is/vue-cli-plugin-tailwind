@@ -1,10 +1,9 @@
 module.exports = {
-
 	addToFileAt (filePath, importPath) {
 		const importStatement = `import '${importPath}'`
 		const fs = require('fs')
 		const mainFileString = fs.readFileSync(filePath, 'utf-8')
-		if (mainFileString.indexOf(importStatement) !== -1) {
+		if (mainFileString.includes(importStatement)) {
 			return
 		}
 		const lines = mainFileString.split(/\r?\n/g)
@@ -21,5 +20,4 @@ module.exports = {
 		lines[lastImportLineIndex] += `\n\n${importStatement}`
 		fs.writeFileSync(filePath, lines.join('\n'), 'utf-8')
 	},
-
 }

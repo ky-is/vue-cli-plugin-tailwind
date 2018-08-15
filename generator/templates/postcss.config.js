@@ -1,4 +1,4 @@
-const isDev = process.argv.indexOf('serve') !== -1
+const isDev = process.argv.includes('serve')
 
 module.exports = {
   plugins: [
