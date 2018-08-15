@@ -1,6 +1,6 @@
 {
 	"name": "@ky-is/vue-cli-plugin-tailwind",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Tailwind CSS + purgecss + postcss-import",
 	"author": "Kyle Coburn",
 	"license": "ISC",
