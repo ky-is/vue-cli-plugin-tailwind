@@ -6,17 +6,19 @@ class TailwindExtractor {
   }
 }
 
+const extensionsWithCSS = [ 'vue', 'css', 'less', 'sass', 'scss', 'styl' ]
+
 module.exports = {
   plugins: [
     require('postcss-import')(),
     require('postcss-preset-env')({ stage: 2 }),
     require('tailwindcss')('./tailwind.config.js'),
     !isHotReloaded && require('@fullhuman/postcss-purgecss')({
-      content: [ './src/**/*.vue', './src/**/*.@(css|less|sass|scss|styl)' ],
+      content: [ `./src/**/*.@(${extensionsWithCSS.join('|')})` ],
       extractors: [
         {
           extractor: TailwindExtractor,
-          extensions: [ 'vue', 'css', 'less', 'sass', 'scss', 'styl' ],
+          extensions: extensionsWithCSS,
         },
       ],
     }),
