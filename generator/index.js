@@ -4,9 +4,9 @@ module.exports = (api, options) => {
 		return Object.keys(files).find(fileName => fileName.toLowerCase().includes(searchName))
 	}
 
-	delete api.generator.pkg.postcss
-
 	api.extendPackage({
+		postcss: undefined,
+
 		devDependencies: {
 			"@fullhuman/postcss-purgecss": "^1.0.1",
 			"postcss-import": "^12.0.0",
