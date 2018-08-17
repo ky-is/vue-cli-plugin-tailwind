@@ -12,7 +12,12 @@
 vue add @ky-is/tailwind
 ```
 
-Requires node 6 or later. 
+When the plugin is updated, you can upgrade your tailwind configuration to take advantages of the latest fixes and improvements with:
+```bash
+vue invoke @ky-is/tailwind
+```
+
+(Requires node 6 or later.)
 
 ## Usage
 
