@@ -1,6 +1,9 @@
-const imports = require('../utils/imports.js')
-
 module.exports = (api, options) => {
+	function findFileName (files, name) {
+		const searchName = `/${name.toLowerCase()}`
+		return Object.keys(files).find(fileName => fileName.toLowerCase().includes(searchName))
+	}
+
 	delete api.generator.pkg.postcss
 
 	api.extendPackage({
@@ -14,9 +17,29 @@ module.exports = (api, options) => {
 
 	api.render('./templates', options)
 
-	api.onCreateComplete(() => {
-		const jsExtension = api.hasPlugin('typescript') ? 'ts' : 'js'
-		const pathToMain = api.resolve(`./src/main.${jsExtension}`)
-		imports.addToFileAt(pathToMain, '@/assets/styles/tailwind.css')
+	api.postProcessFiles(files => {
+		const searchName = 'App.vue'
+		const appFileName = findFileName(files, searchName)
+		const importPath = 'assets/styles/tailwind.css'
+		if (!appFileName) {
+			return api.exitLog(`${searchName} file not found. Please import '${importPath}' manually.`, 'error')
+		}
+		const appFileString = files[appFileName]
+		if (appFileString.includes(importPath)) {
+			return
+		}
+		const mainFileString = files[findFileName(files, 'main.')]
+		if (mainFileString && mainFileString.includes(importPath)) {
+			return
+		}
+		const importStatement = `\n@import '${importPath}';\n`
+		const lines = appFileString.split(/\r?\n/g)
+		const styleIndex = lines.findIndex(line => line.startsWith('<style'))
+		if (styleIndex !== -1) {
+			lines[styleIndex] += importStatement
+		} else {
+			lines[lines.length - 1] += `\n<style>${importStatement}</style>\n`
+		}
+		files[appFileName] = lines.join('\n')
 	})
 }
