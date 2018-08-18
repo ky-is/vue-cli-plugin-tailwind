@@ -2,7 +2,7 @@
 
 [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind)'s utility classes are minned by [Purgecss](https://www.purgecss.com) to ensure a minimal CSS footprint.
 
-[postcss-preset-env](https://preset-env.cssdb.org/features) enables you to write CSS from upcoming standards, polyfilled based on your browserslist configuration.
+[postcss-preset-env](https://preset-env.cssdb.org/features) enables you to write CSS from upcoming standards, polyfilled based on your `browserslist` configuration.
 
 [postcss-import](https://github.com/postcss/postcss-import) allows importing Tailwind with the standard `@import` syntax.
 
@@ -37,6 +37,6 @@ Applies a purple text color with scoped, browser-prefixed CSS, while PurgeCSS st
 
 ### `postcss.config.js` Plugins
 
-- `postcss-preset-env`: Configured to stage 2 by default, as these draft proposals are considered reasonably stable. If you want to enable more experimental features like nested classes (`a { &hover: {...} }`), change to `stage: 0`.
+- `postcss-preset-env`: Defaults to stage 2, as these draft proposals are considered reasonably stable. If you want to enable handy experimental features like nested classes (`a { &hover: {...} }`), change to `stage: 0`. You can safely delete this plugin from the list if you only write old CSS or use another preprocessor.
 
 - `@fullhuman/postcss-purgecss`: Purgecss removes all CSS classes that it can't find reference to. By default, all Vue and style files in the `src` folder are included. Adjust `content` array if you have CSS classes in other files.
