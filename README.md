@@ -4,8 +4,6 @@
 
 [postcss-preset-env](https://preset-env.cssdb.org/features) enables you to write CSS from upcoming standards, polyfilled based on your `browserslist` configuration.
 
-[postcss-import](https://github.com/postcss/postcss-import) allows importing Tailwind with the standard `@import` syntax.
-
 ## Install
 
 ```bash

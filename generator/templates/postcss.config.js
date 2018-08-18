@@ -10,7 +10,6 @@ const extensionsWithCSS = [ 'vue', 'css', 'less', 'postcss', 'sass', 'scss', 'st
 
 module.exports = {
   plugins: [
-    require('postcss-import')(),
     require('postcss-preset-env')({ stage: 2 }),
     require('tailwindcss')('./tailwind.config.js'),
     isHotReloaded ? null : require('@fullhuman/postcss-purgecss')({
