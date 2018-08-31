@@ -35,6 +35,6 @@ Applies a purple text color with scoped, browser-prefixed CSS, while PurgeCSS st
 
 ### `postcss.config.js` Plugins
 
-- `postcss-preset-env`: Defaults to stage 2, as these draft proposals are considered reasonably stable. If you want to enable handy experimental features like nested classes (`a { &hover: {...} }`), change to `stage: 0`. You can safely delete this plugin from the list if you only write old CSS or use another preprocessor.
+- `postcss-preset-env`: Defaults to stage 2, as these draft proposals are considered reasonably stable. If you want to enable handy experimental features like nested classes (`a { &:hover: {...} }`), change to `stage: 0`. You can safely delete this plugin from the list if you only write old CSS or use another preprocessor.
 
 - `@fullhuman/postcss-purgecss`: Purgecss removes all CSS classes that it can't find reference to. By default, all Vue and style files in the `src` folder are included. Adjust `content` array if you have CSS classes in other files.
