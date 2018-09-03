@@ -1,8 +1,9 @@
 const isHotReloaded = process.argv.includes('serve')
 
-class TailwindExtractor {
+class TailwindVueExtractor {
   static extract (content) {
-    return content.match(/[A-Za-z0-9-_:/]+/g) || []
+    const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
+    return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_:/]+/g) || []
   }
 }
 
@@ -16,7 +17,7 @@ module.exports = {
       content: [ `./src/**/*.@(${extensionsWithCSS.join('|')})` ],
       extractors: [
         {
-          extractor: TailwindExtractor,
+          extractor: TailwindVueExtractor,
           extensions: extensionsWithCSS,
         },
       ],
