@@ -7,18 +7,20 @@ class TailwindVueExtractor {
   }
 }
 
-const extensionsWithCSS = [ 'vue', 'css', 'less', 'pcss', 'postcss', 'sass', 'scss', 'styl' ]
+const extensionsUsingCSS = [ 'vue', 'html' ]
+const extensionsOfCSS = [ 'css', 'less', 'pcss', 'postcss', 'sass', 'scss', 'styl' ]
 
 module.exports = {
   plugins: [
     require('postcss-preset-env')({ stage: 2 }),
     require('tailwindcss')('./tailwind.config.js'),
-    isHotReloaded ? null : require('@fullhuman/postcss-purgecss')({
-      content: [ `./src/**/*.@(${extensionsWithCSS.join('|')})` ],
+    !isHotReloaded && require('@fullhuman/postcss-purgecss')({
+      content: [ `./@(public|src)/**/*.@(${extensionsUsingCSS.join('|')})` ],
+      css: [ `./src/**/*.@(${extensionsOfCSS.join('|')})` ],
       extractors: [
         {
           extractor: TailwindVueExtractor,
-          extensions: extensionsWithCSS,
+          extensions: extensionsUsingCSS,
         },
       ],
     }),
