@@ -245,8 +245,8 @@ module.exports = {
   */
 
   textSizes: {
-    'xs': '.75rem',     // 12px
-    'sm': '.875rem',    // 14px
+    'xs': '0.75rem',     // 12px
+    'sm': '0.875rem',    // 14px
     'base': '1rem',     // 16px
     'lg': '1.125rem',   // 18px
     'xl': '1.25rem',    // 20px
@@ -426,9 +426,9 @@ module.exports = {
 
   borderRadius: {
     'none': '0',
-    'sm': '.125rem',
-    default: '.25rem',
-    'lg': '.5rem',
+    'sm': '0.125rem',
+    default: '0.25rem',
+    'lg': '0.5rem',
     'full': '9999px',
   },
 
@@ -771,9 +771,9 @@ module.exports = {
 
   opacity: {
     '0': '0',
-    '25': '.25',
-    '50': '.5',
-    '75': '.75',
+    '25': '0.25',
+    '50': '0.5',
+    '75': '0.75',
     '100': '1',
   },
 
