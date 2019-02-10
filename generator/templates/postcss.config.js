@@ -1,4 +1,4 @@
-const isHotReloaded = process.argv.includes('serve')
+const IN_PRODUCTION = process.env.NODE_ENV === 'production'
 
 class TailwindVueExtractor {
   static extract (content) {
@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     require('postcss-preset-env')({ stage: 2 }),
     require('tailwindcss')('./tailwind.config.js'),
-    !isHotReloaded && require('@fullhuman/postcss-purgecss')({
+    IN_PRODUCTION && require('@fullhuman/postcss-purgecss')({
       content: [ `./@(public|src)/**/*.@(${extensionsUsingCSS.join('|')})` ],
       css: [ `./src/**/*.@(${extensionsOfCSS.join('|')})` ],
       extractors: [
