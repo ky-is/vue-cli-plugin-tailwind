@@ -9,8 +9,8 @@ module.exports = (api, options) => {
 
 		devDependencies: {
 			"@fullhuman/postcss-purgecss": "^1.1.0",
-			"postcss-preset-env": "^6.3.0",
-			"tailwindcss": "^0.7.0",
+			"postcss-preset-env": "^6.6.0",
+			"tailwindcss": "^1.0.0-beta",
 		},
 	})
 
