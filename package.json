@@ -13,8 +13,8 @@
 	},
 	"homepage": "https://github.com/ky-is/vue-cli-plugin-tailwind#readme",
 	"devDependencies": {
-		"@ky-is/eslint-config": "^1.5.1",
-		"eslint": "^5.8.0"
+		"@ky-is/eslint-config": "^1.6.4",
+		"eslint": "^5.16.0"
 	},
 	"eslintConfig": {
 		"extends": "@ky-is"
