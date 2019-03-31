@@ -1,7 +1,7 @@
 {
 	"name": "@ky-is/vue-cli-plugin-tailwind",
 	"version": "1.6.0",
-	"description": "Everything you need to write utility-first CSS with modern standards in your Vue app.",
+	"description": "Write utility-first CSS with future standards in your Vue app using TailwindCSS.",
 	"author": "Kyle Coburn",
 	"license": "ISC",
 	"repository": {
