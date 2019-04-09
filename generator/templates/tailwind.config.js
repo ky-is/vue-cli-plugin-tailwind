@@ -1,13 +1,10 @@
 module.exports = {
   theme: {
-    opacity: {
-      '0': '0',
-      '10': '0.1',
-      '25': '0.25',
-      '50': '0.5',
-      '75': '0.75',
-      '90': '0.9',
-      '100': '1',
+    extend: {
+      opacity: {
+        '10': '0.1',
+        '90': '0.9',
+      },
     },
   },
   variants: {
@@ -76,6 +73,8 @@ module.exports = {
     width: ['responsive'],
     zIndex: ['responsive'],
   },
-  corePlugins: {},
+  corePlugins: {
+    container: false,
+  },
   plugins: [],
 }
