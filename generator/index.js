@@ -18,8 +18,6 @@ module.exports = (api, options) => {
 
 	api.postProcessFiles(files => {
 		const importRelativePath = 'assets/styles/tailwind'
-		delete files[`src/${importRelativePath}.css`]
-
 		const searchName = 'App.vue'
 		const appFileName = findFileInNamed(files, searchName)
 		const importExtension = 'postcss'
@@ -40,7 +38,7 @@ module.exports = (api, options) => {
 		if (styleIndex !== -1) {
 			lines[styleIndex] += importStatement
 		} else {
-			lines[lines.length - 1] += `\n<style>${importStatement}\n</style>\n`
+			lines[lines.length - 1] += `\n<style lang="postcss">${importStatement}\n</style>\n`
 		}
 		files[appFileName] = lines.join('\n')
 	})

@@ -3,7 +3,7 @@ const IN_PRODUCTION = process.env.NODE_ENV === 'production'
 module.exports = {
   plugins: [
     require('postcss-preset-env')({ stage: 0 }),
-    require('tailwindcss')('./tailwind.config.js'),
+    require('tailwindcss')(),
     IN_PRODUCTION && require('@fullhuman/postcss-purgecss')({
       content: [ `./public/**/*.html`, `./src/**/*.vue` ],
       defaultExtractor (content) {
