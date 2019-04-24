@@ -68,6 +68,7 @@ serve -s dist
 
 ## Caveats
 
+- Don't reference class names by string concatination, as PurgeCSS cannot find them. **Don't:** `text-${error ? 'red' : 'green'}-600`. **Do:** `error ? 'text-red-600' : 'text-green-600'`.
 - By default, any class you declare that matches `.*-move` will be whitelisted and always included in your output CSS. This is required to support `<transition-group>`'s [generated classnames](https://vuejs.org/v2/guide/transitions.html#List-Move-Transitions). You can change `whitelistPatterns` in `postcss.config.js` if you don't want this behavior.
 - Any time you're using TailwindCSS and Vue, be careful not to define a `<transition-group>` with `name="cursor"`, as this will generate `.cursor-move` which will inherit [TailwindCSS's cursor class](https://tailwindcss.com/docs/cursor/).
 - If you use any custom characters in your css classes beyond `/` and `:` (which are required for TailwindCSS), you need to add them to the default regex pattern `/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g`.
