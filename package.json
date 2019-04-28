@@ -1,6 +1,6 @@
 {
 	"name": "@ky-is/vue-cli-plugin-tailwind",
-	"version": "2.0.0-beta.1",
+	"version": "2.0.0-beta.2",
 	"description": "Write utility-first CSS with future standards in your Vue app using TailwindCSS.",
 	"author": "Kyle Coburn",
 	"license": "ISC",
