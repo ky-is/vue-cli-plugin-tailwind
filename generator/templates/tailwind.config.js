@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      inset: {
+        'full': '100%',
+      },
       opacity: {
         '10': '0.1',
         '90': '0.9',
