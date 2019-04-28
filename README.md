@@ -5,7 +5,7 @@
 
 ## Install
 
-### Tailwind 1.0
+### TailwindCSS v1.0
 
 ```console
 vue add @ky-is/tailwind@next
@@ -16,7 +16,7 @@ When the plugin is updated, you can upgrade your configuration with:
 vue invoke @ky-is/tailwind
 ```
 
-### Tailwind 0.x
+### TailwindCSS v0.x
 
 See the [`tailwind-0.x` branch](https://github.com/ky-is/vue-cli-plugin-tailwind/tree/tailwind-0.x).
 
@@ -49,11 +49,7 @@ Any CSS class that isn't used inside your `.html` files in `public/`, or by your
 
 ### 3rd-party CSS
 
-If you're importing CSS from a 3rd-party library, you'll need to add its source files to PurgeCSS's search paths in `postcss.config.js` via the `content` array so it knows they're in use, or `whitelist` the imported classnames so they're never purged.
-
-As an example, `vue-good-table` requires importing its bundled CSS classes. Since PurgeCSS doesn't see those classes being used anywhere, by default they'll be removed from your production build.
-
-There's two approaches to fix this:
+If you're importing CSS from a 3rd-party library, you'll need to add its source files to PurgeCSS's search paths in `postcss.config.js` via the `content` array so it knows they're in use, or `whitelist` the imported classnames so they're never purged. As an example, `vue-good-table` requires importing its bundled CSS classes. There's two approaches to ensure its classes aren't purged from your production builds:
 - Add `'./node_modules/vue-good-table/src/**/*.vue'` to the `content` array (so PurgeCSS sees these classes being used)
 
 Or:
