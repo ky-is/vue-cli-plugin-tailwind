@@ -8,7 +8,7 @@
 ### TailwindCSS v1.0
 
 ```console
-vue add @ky-is/tailwind@next
+vue add @ky-is/tailwind
 ```
 
 When the plugin is updated, you can upgrade your configuration with:
